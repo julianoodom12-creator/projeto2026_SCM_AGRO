@@ -34,3 +34,4 @@ Versão controlada pelo Git: toda alteração neste artefato deve ser registrada
 |---|---|---|
 | 05/11/2026 | 0.1 | Criação do documento com RF01 a RF03. |
 | 06/11/2026 | 0.2 | Inclusão de RF04, RN04 e do módulo `src/safra.py`. |
+| 06/11/2026 | 0.3 | Inclusão do manual de uso (`docs/manual-uso.md`). |

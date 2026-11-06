@@ -19,7 +19,8 @@ permitindo que os membros do time:
 ```
 projeto2026_SCM_AGRO/
 ├── docs/
-│   └── requisitos.md      # requisitos funcionais do módulo de safra
+│   ├── requisitos.md      # requisitos funcionais do módulo de safra
+│   └── manual-uso.md      # manual de uso e indicadores
 ├── src/
 │   ├── __init__.py
 │   ├── app.py             # ponto de entrada da aplicação
