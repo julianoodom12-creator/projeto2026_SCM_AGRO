@@ -1,0 +1,4 @@
+# Dependências do projeto
+# O módulo atual usa apenas a biblioteca padrão do Python 3.11+.
+# Dependências de desenvolvimento (não obrigatórias):
+#   pytest==8.3.3
