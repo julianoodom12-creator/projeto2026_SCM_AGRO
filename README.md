@@ -36,7 +36,7 @@ projeto2026_SCM_AGRO/
 ```bash
 git clone https://github.com/<usuario>/projeto2026_SCM_AGRO.git
 cd projeto2026_SCM_AGRO
-python src/app.py
+python -m src.app
 python -m unittest discover -s tests -v
 ```
 

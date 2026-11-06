@@ -5,6 +5,8 @@ Lista os talhões cadastrados e apresenta os indicadores de produtividade.
 
 from __future__ import annotations
 
+from src.safra import produtividade_kg_ha, sacas_por_hectare
+
 TALHOES: list[dict] = [
     {"id": 1, "nome": "Talhão Norte", "area_ha": 12.5, "producao_kg": 87500.0},
     {"id": 2, "nome": "Talhão Sul", "area_ha": 8.0, "producao_kg": 52800.0},
@@ -13,13 +15,19 @@ TALHOES: list[dict] = [
 
 
 def listar_talhoes() -> None:
-    """Imprime a relação de talhões com a respectiva área."""
+    """Imprime a relação de talhões com os indicadores de produtividade."""
     print("AgroGestor — talhões cadastrados")
-    print("-" * 44)
-    print(f"{'ID':>3}  {'Talhão':<16}{'Área (ha)':>10}")
+    print("-" * 68)
+    print(f"{'ID':>3}  {'Talhão':<16}{'Área (ha)':>10}{'Prod. (kg/ha)':>16}{'Sacas/ha':>12}")
+    print("-" * 68)
     for talhao in TALHOES:
-        print(f"{talhao['id']:>3}  {talhao['nome']:<16}{talhao['area_ha']:>10.1f}")
-    print("-" * 44)
+        prod = produtividade_kg_ha(talhao["producao_kg"], talhao["area_ha"])
+        sacas = sacas_por_hectare(talhao["producao_kg"], talhao["area_ha"])
+        print(
+            f"{talhao['id']:>3}  {talhao['nome']:<16}{talhao['area_ha']:>10.1f}"
+            f"{prod:>16.2f}{sacas:>12.2f}"
+        )
+    print("-" * 68)
     print(f"Total de área: {sum(t['area_ha'] for t in TALHOES):.1f} ha")
 
 
